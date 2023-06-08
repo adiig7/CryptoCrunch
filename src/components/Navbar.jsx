@@ -5,18 +5,27 @@ import { HomeOutlined, MoneyCollectOutlined, BulbOutlined, FundOutlined, MenuOut
 import icon from './../assets/icon.png'
 const Navbar = () => {
   return (
-      <div className='nav-container'>
+    <div className="nav-container">
           <div className="logo-container">
-              <Avatar src={icon} size="large"/>
-              <Typography.Title level={2} className='logo'>
-                  <Link to='/'>CryptoCrunch</Link>
+              <Avatar src={icon} size="large" />
+              <Typography.Title level={2} className="logo">
+                  <Link to="/">CryptoCrunch</Link>
               </Typography.Title>
-              {/* <Button className="menu-control-container">
-                  
-              </Button>  */}
           </div>
-      </div>
-  )
+          
+          <Menu theme="dark">
+              <Menu.Item icon={<HomeOutlined />}>
+                  <Link to="/">Home</Link>
+              </Menu.Item>
+            <Menu.Item icon={<FundOutlined />}>
+            <Link to="/cryptocurrencies">Cryptocurrencies</Link>
+            </Menu.Item>
+            <Menu.Item icon={<BulbOutlined />}>
+            <Link to="/news">News</Link>
+              </Menu.Item>
+      </Menu>
+    </div>
+  );
 }
 
 export default Navbar
